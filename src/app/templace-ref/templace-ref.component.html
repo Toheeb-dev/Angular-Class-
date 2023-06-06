@@ -1,0 +1,16 @@
+<input type="text" #myVariable (keyup)="0">
+<button (click)="sayHello(myVariable)">Say Hello</button>
+<p>{{ myVariable.value }}</p>
+
+<app-namelist #selectedPerson></app-namelist>
+<div *ngIf="selectedPerson.selectedName">
+    <p class="fw-bold text-success">You have selected:</p>
+    <ul>
+        <li>Name: {{selectedPerson.selectedName?.realName}}</li>
+        <li>Username: {{selectedPerson.selectedName?.username}}</li>
+        <li>Email: {{selectedPerson.selectedName?.email}}</li>
+        <li>City: {{selectedPerson.selectedName?.address.city}}</li>
+        <li>Street: {{selectedPerson.selectedName?.address.street}}</li>
+        <li>Zip Code: {{selectedPerson.selectedName?.address.zipcode}}</li>
+    </ul>
+</div>

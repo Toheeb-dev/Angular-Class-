@@ -1,0 +1,58 @@
+<ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
+  </li>
+</ul>
+<div class="col-6 mx-auto shadow-sm">
+  <div>
+  <form [formGroup]="userForm" (submit)="submitUserForm()">
+    <div class="form-group my-2">
+      <label for="">First Name</label>
+      <input type="text" name="firstname" class="form-control" formControlName="firstName" [(ngModel)]="firstname" />
+      <div *ngIf="userForm.controls.firstName.errors">
+        <span class="text-sm text-danger" *ngIf="userForm.controls.firstName.errors?.['required'] && userForm.controls.firstName.touched">first name is require</span>
+        <span class="text-sm text-danger" *ngIf="userForm.controls.firstName.errors?.['minlength'] && userForm.controls.firstName.touched">Must not less than 4 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group my-2">
+      <label for="">Last Name</label>
+      <input type="text" name="lastname" class="form-control" formControlName="lastName" [(ngModel)]="lastname"/>
+      <div *ngIf="userForm.controls.lastName.errors">
+        <span class="text-sm text-danger" *ngIf="userForm.controls.lastName.errors?.['required'] && userForm.controls.lastName.touched">last name is require</span>
+        <span class="text-sm text-danger" *ngIf="userForm.controls.lastName.errors?.['minlength'] && userForm.controls.lastName.touched">Must not less than 4 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group my-2">
+      <label for="">email</label>
+      <input type="email" name="department" class="form-control" formControlName="email" [(ngModel)]="dept"/>
+      <div *ngIf="userForm.controls.email.errors">
+        <span class="text-sm text-danger" *ngIf="userForm.controls.email.errors?.['required'] && userForm.controls.email.touched">Email is require</span>
+        <span class="text-sm text-danger" *ngIf="userForm.controls.email.errors?.['email'] && userForm.controls.email.touched">Invalid Email</span>
+      </div>
+    </div>
+
+    <div class="form-group my-2">
+      <label for="" color="red">Password</label>
+      <input type="password" name="password" class="form-control" formControlName="pass" [(ngModel)]="password"/>
+      <div *ngIf="userForm.controls.pass.errors">
+        <span class="text-sm text-danger" *ngIf="userForm.controls.pass.errors?.['required'] && userForm.controls.pass.touched">Password is require</span>
+        <span class="text-sm text-danger" *ngIf="userForm.controls.pass.errors?.['minlength'] && userForm.controls.pass.touched">Must not less than 6 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group my-2">
+     <button type="submit" class="btn btn-primary submit" [disabled]="userForm.invalid">Submit</button>
+    </div>
+  </form>
+  </div>
+</div>
+
+<app-templace-ref></app-templace-ref>

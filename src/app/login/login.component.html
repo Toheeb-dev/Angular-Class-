@@ -1,0 +1,38 @@
+<ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
+  </li>
+</ul>
+<div class="col-6 mx-auto shadow-sm">
+  <div>
+   <form [formGroup]="loginForm" (submit)="signIn()">
+    <div class="form-group my-2">
+      <label for="">Email</label>
+      <input type="email" name="firstname" formControlName="email" class="form-control" [(ngModel)]="firstname" />
+      <div *ngIf="loginForm.controls.email.errors">
+        <span class="text-sm text-danger" *ngIf="loginForm.controls.email.errors?.['required'] && loginForm.controls.email.touched">Email is required</span>
+        <span class="text-sm text-danger" *ngIf="loginForm.controls.email.errors?.['email'] && loginForm.controls.email.touched">Invalid Email</span>
+      </div>
+    </div>
+
+    <div class="form-group my-2">
+      <label for="">Password</label>
+      <input type="password" name="password" formControlName="password" class="form-control" [(ngModel)]="pass"/>
+      <div *ngIf="loginForm.controls.password.errors">
+        <span class="text-sm text-danger" *ngIf="loginForm.controls.password.errors?.['required'] && loginForm.controls.password.touched">Password is require</span>
+        <span class="text-sm text-danger" *ngIf="loginForm.controls.password.errors?.['minlength'] && loginForm.controls.password.touched">Must not less than 6 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group my-2">
+     <button type="submit" class="btn btn-primary submit" [disabled]="loginForm.invalid">Sign In</button>
+  </div>
+   </form>
+</div>
+</div>

@@ -1,0 +1,39 @@
+<form action="" (submit)="submitForm()" #userForm = "ngForm">
+  <div class="form-group col-6 my-2 mx-auto">
+<label for="">First Name</label>
+<input class="form-control" type="text" required="true" minlength="5"  name="firstname" id="" [(ngModel)]="firstName" #userFirstName="ngModel" [class.is-valid]="userFirstName.valid && userFirstName.touched" [class.is-invalid]="userFirstName.invalid && userFirstName.touched"/>
+
+<div *ngIf="userFirstName.errors">
+<span *ngIf="userFirstName?.errors?.['required']&& userFirstName.touched" class="text-sm text-danger">first name is required</span>
+<span *ngIf="userFirstName?.errors?.['minlength']&& userFirstName.touched" class="text-sm text-danger">Minimum length is 5</span>
+</div>
+  </div>
+
+  <div class="form-group col-6 my-2 mx-auto">
+    <label for="">Email</label>
+    <input class="form-control" type="text" required="true"  name="email" id="" [(ngModel)]="email" #userEmail="ngModel" [class.is-valid]="userEmail.valid && userEmail.touched" [class.is-invalid]="userEmail.invalid && userEmail.touched"/>
+
+    <div *ngIf="userEmail.errors">
+    <span *ngIf="userEmail?.errors?.['required']&& userEmail.touched" class="text-sm text-danger">Email is required</span>
+    </div>
+      </div>
+      <div class="form-group col-6 my-2 mx-auto">
+        <label for="" class="form-label">Phone Number</label>
+        <input type="tel" name="phone_no" id="" class="form-control" [(ngModel)]="phone_no" #userPhoneNo="ngModel" appPhoneValidator>
+        <div *ngIf="userPhoneNo.errors">
+          <span *ngIf="userPhoneNo?.errors?.['noCountryCode']" class="text-sm text-danger">Country Code must be specified</span>
+          <span *ngIf="userPhoneNo?.errors?.['notCorrect']" class="text-sm text-danger">Country Code is not correctly specified</span>
+        </div>
+      </div>
+  <div class="form-group col-6 my-2 mx-auto text-center">
+    <button class="btn btn-success" type="submit" [disabled]="userForm.invalid">Submit</button>
+       </div>
+</form>
+
+<!--
+  State of forms/input
+  Touched
+  Dirty
+  Pristine
+  Invalid/valid
+ -->

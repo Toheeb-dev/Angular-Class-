@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Street</th>
+        <th scope="col">City</th>
+        <th scope="col">Zip code</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let person of names">
+        <th scope="row">{{ person.id }}</th>
+        <td>{{ person.realName }}</td>
+        <td>{{ person.username }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.address.street }}</td>
+        <td>{{ person.address.city }}</td>
+        <td>{{ person.address.zipcode }}</td>
+        <td><button class="btn btn-info" (click)=" selectedName = person">select</button></td>
+      </tr>
+    </tbody>
+  </table>

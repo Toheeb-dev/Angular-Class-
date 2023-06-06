@@ -1,0 +1,33 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+       <h5>Create your post</h5>
+       <form action="" [formGroup]="postForm" (submit)="createPost()">
+        <div class="form-group my-2">
+          <label for="">Post Title</label>
+          <input type="text" name="title" id="" class="form-control" formControlName="postTitle" placeholder="The new wave in Tech ....." [(ngModel)]="title">
+          <div *ngIf="postForm.controls.postTitle.errors">
+              <span class="text-sm text-danger" *ngIf="postForm.controls.postTitle.errors?.['required']&& postForm.controls.postTitle.touched">Post Title is require</span>
+          </div>
+         </div>
+         <div class="form-group my-2">
+          <label for="">Post Body</label>
+          <textarea name="body" id="" cols="30" rows="10" class="form-control" formControlName="postBody" [(ngModel)]="body"></textarea>
+          <div *ngIf="postForm.controls.postBody.errors">
+              <span class="text-sm text-danger" *ngIf="postForm.controls.postBody.errors?.['required'] && postForm.controls.postBody.touched">
+                Post Body is required
+              </span>
+              <span class="text-sm text-danger" *ngIf="postForm.controls.postBody.errors?.['minlength']  && postForm.controls.postBody.touched">Post Body not less than 15 characters</span>
+              <span class="text-sm text-danger" *ngIf="postForm.controls.postBody.errors?.['maxlength']">Post body cannot be more than 500 characters</span>
+          </div>
+         </div>
+         <div class="form-group my-2 ">
+          <button type="submit" class="btn btn-md btn-success text-light me-auto" [disabled]="postForm.invalid" data-bs-dismiss="modal">Post</button>
+         </div>
+       </form>
+      </div>
+    </div>
+  </div>
+</div>

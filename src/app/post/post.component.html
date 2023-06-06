@@ -1,0 +1,11 @@
+<div *ngIf="post; else postNotFound">
+  <h5>{{post.title}}</h5>
+  <p>{{post.body}}</p>
+  <p class="fw-light text-decoration-italic">Written by {{user.firstName}}</p>
+</div>
+
+<ng-template #postNotFound>
+  <div class="col-6 mx-auto mt-4">
+    <p>Oops! This post cannot be found</p>
+  </div>
+</ng-template>

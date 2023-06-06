@@ -1,0 +1,190 @@
+<div class="nav-bar bg-primary">
+  <h2 class="text-center text-light">TO-DO APP</h2>
+</div>
+<div class="border border-3 border-primary p-2 w-75 mx-auto rounded">
+  <div class="form-group text-center">
+    <label for="" class="h5 py-2">Todo Items: </label>
+    <input type="text" name="" id="" placeholder="Enter what you want to do" class="form-control border border-dark w-75 mx-auto" [(ngModel)]="todoItem">
+  </div>
+  <div class="d-flex w-75 mx-auto justify-content-between">
+  <div class="form-group w-50 mx-2">
+    <label for="" class="h5 py-2">Date of Todo: </label>
+    <input type="date" name="" id="" class="form-control border border-dark mx-auto" [(ngModel)]="todoDate">
+  </div>
+  <div class="form-group w-50 mx-2">
+    <label for="" class="h5 py-2">Time Todo: </label>
+    <input type="time" name="" id="" class="form-control border border-dark mx-auto" [(ngModel)]="todoTime">
+  </div>
+</div>
+<div class="form-group text-center">
+  <label for="" class="h5 py-2">Details of Todo: </label>
+  <br>
+  <textarea class="rounded border border-dark p-1" placeholder="write the details of your todo here" name="" id="" cols="30" rows="5" [(ngModel)]="todoDetails"></textarea>
+</div>
+
+<hr>
+<div class="text-center">
+  <button class="btn btn-outline-primary" type="submit" (click)="addTodo()">Add Todo</button>
+</div>
+</div>
+<br>
+<div class="col-9 mx-auto border border-dark border-3 bg-primary rounded shadow my-2 text-light p-2">
+<h3 class="text-center">Todo Lists</h3>
+<hr>
+<div *ngFor="let item of todoArray">
+  <h5>Item's Name : {{item.Items}}</h5>
+  <h6>Date : {{item.Date}}</h6>
+  <h6>Time : {{item.Time}}</h6>
+  <h6><Details>{{item.Details}}</Details></h6>
+  <hr>
+</div>
+</div>
+<div>
+  <button mat-button color="primary" (click)="openDialog('1000ms', '3000ms')">Open</button>
+</div>
+
+<!-- Start -->
+<section class="">
+  <div class="example-label">Basic</div>
+  <div class="example-button-row">
+    <button mat-button>Basic</button>
+    <button mat-button color="primary">Primary</button>
+    <button mat-button color="accent">Accent</button>
+    <button mat-button color="warn">Warn</button>
+    <button mat-button disabled>Disabled</button>
+    <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</section>
+<mat-divider></mat-divider>
+<section>
+  <div class="example-label">Raised</div>
+  <div class="example-button-row">
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</section>
+<mat-divider></mat-divider>
+<section>
+  <div class="example-label">Stroked</div>
+  <div class="example-button-row">
+    <button mat-stroked-button>Basic</button>
+    <button mat-stroked-button color="primary">Primary</button>
+    <button mat-stroked-button color="accent">Accent</button>
+    <button mat-stroked-button color="warn">Warn</button>
+    <button mat-stroked-button disabled>Disabled</button>
+    <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</section>
+<mat-divider></mat-divider>
+<section>
+  <div class="example-label">Flat</div>
+  <div class="example-button-row">
+    <button mat-flat-button>Basic</button>
+    <button mat-flat-button color="primary">Primary</button>
+    <button mat-flat-button color="accent">Accent</button>
+    <button mat-flat-button color="warn">Warn</button>
+    <button mat-flat-button disabled>Disabled</button>
+    <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</section>
+<mat-divider></mat-divider>
+<section>
+  <div class="example-label">Icon</div>
+  <div class="example-button-row">
+    <div class="example-flex-container">
+      <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+        <mat-icon>home</mat-icon>
+      </button>
+      <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon">
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+    </div>
+  </div>
+</section>
+<mat-divider></mat-divider>
+<section>
+  <div class="example-label">FAB</div>
+  <div class="example-button-row">
+    <div class="example-flex-container">
+      <div class="example-button-container">
+        <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <div class="example-button-container">
+        <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+          <mat-icon>bookmark</mat-icon>
+        </button>
+      </div>
+      <div class="example-button-container">
+        <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+      <div class="example-button-container">
+        <button mat-fab disabled aria-label="Example icon button with a heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<mat-divider></mat-divider>
+<section>
+  <div class="example-label">Mini FAB</div>
+  <div class="example-button-row">
+    <div class="example-flex-container">
+      <div class="example-button-container">
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="example-button-container">
+        <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+          <mat-icon>plus_one</mat-icon>
+        </button>
+      </div>
+      <div class="example-button-container">
+        <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+          <mat-icon>filter_list</mat-icon>
+        </button>
+      </div>
+      <div class="example-button-container">
+        <button mat-mini-fab disabled aria-label="Example icon button with a home icon">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mat Card -->
+<div>
+  <mat-card class="myCard">
+    <mat-card-header>
+      <mat-card-title> Angular JS</mat-card-title>
+      <mat-card-subtitle>Latest Angular Version</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat magni et sunt totam autem esse!</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
