@@ -22,6 +22,7 @@ import { MaterialModule } from './material/material.module';
 import { TemplaceRefComponent } from './templace-ref/templace-ref.component';
 import { NamelistComponent } from './namelist/namelist.component';
 import { VeiwChildComponent } from './veiw-child/veiw-child.component';
+import { DemoComponent } from './demo/demo.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { VeiwChildComponent } from './veiw-child/veiw-child.component';
     TemplaceRefComponent,
     NamelistComponent,
     VeiwChildComponent,
+    DemoComponent,
     
   ],
   imports: [

@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {Router} from "@angular/router"
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.css']
+  styleUrls: ['./forms.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class FormsComponent implements OnInit{
