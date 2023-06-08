@@ -10,6 +10,7 @@ import { FormsComponent } from './forms/forms.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HooksComponent } from './hooks/hooks.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"signup", pathMatch:"full"},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:"comments", component:CommentsComponent, title:"allComment"},
   {path:"templateDriven", component:TemplateDrivenComponent, title:"TemplateDriven"},
   {path:"reactiveForm", component:ReativeFormsComponent, title:"Reactive Forms"},
-  {path:"apiCalls", component:ApiCallsComponent, title:"apiCalls Services"}
+  {path:"apiCalls", component:ApiCallsComponent, title:"apiCalls Services"},
+  {path:"hooks", component:HooksComponent, title:"hooks lifecycle"}
 ];
 
 @NgModule({
