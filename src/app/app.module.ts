@@ -25,6 +25,7 @@ import { VeiwChildComponent } from './veiw-child/veiw-child.component';
 import { DemoComponent } from './demo/demo.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { ContentChildComponent } from './content-child/content-child.component';
+import { SetBackgroundDirective } from './customDirectives/set-background.directive';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { ContentChildComponent } from './content-child/content-child.component';
     DemoComponent,
     HooksComponent,
     ContentChildComponent,
+    SetBackgroundDirective,
     
   ],
   imports: [
