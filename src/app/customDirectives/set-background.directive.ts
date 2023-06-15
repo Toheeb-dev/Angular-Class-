@@ -4,10 +4,10 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
   selector: '[appSetBackground]',
 })
 export class SetBackgroundDirective implements OnInit {
-  private element!: ElementRef;
-  constructor(element: ElementRef) { 
-    // element.nativeElement.style.background = 'green'
-    this.element = element
+  // private element!: ElementRef;
+  constructor(private element: ElementRef) { 
+    // element.nativeElement.style.background = 'green' //u can use it like this
+    // this.element = element
   }
 
   ngOnInit() {

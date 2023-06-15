@@ -26,6 +26,12 @@ import { DemoComponent } from './demo/demo.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { ContentChildComponent } from './content-child/content-child.component';
 import { SetBackgroundDirective } from './customDirectives/set-background.directive';
+import { HighlightDirective } from './customDirectives/highlight.directive';
+import { HostListenDirective } from './customDirectives/host-listen.directive';
+import { HostbiddingDirective } from './customDirectives/hostbidding.directive';
+import { AppClassDirective } from './customDirectives/app-class.directive';
+import { CondDirDirective } from './customDirectives/cond-dir.directive';
+import { StyleDirective } from './customDirectives/style.directive';
 
 
 @NgModule({
@@ -49,6 +55,12 @@ import { SetBackgroundDirective } from './customDirectives/set-background.direct
     HooksComponent,
     ContentChildComponent,
     SetBackgroundDirective,
+    HighlightDirective,
+    HostListenDirective,
+    HostbiddingDirective,
+    AppClassDirective,
+    CondDirDirective,
+    StyleDirective,
     
   ],
   imports: [

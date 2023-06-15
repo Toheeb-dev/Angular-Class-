@@ -1,7 +1,30 @@
-<div class="alert alert-success w-100 text-center">
+<div class="alert alert-success w-100 text-center" appHostListen>
 <p>You write: {{ text }} </p>
 <ng-content></ng-content>
 </div>
 <app-content-child>
-    <p appSetBackground #paragraph>This is from parent component</p>
+    <p appSetBackground #paragraph appHostListen>This is from parent component</p>
 </app-content-child>
+
+<p appHighlight>This is setStyle component</p>
+<div class="w-100 text-center p-3" appHostbidding [defaultColor] = "'skyblue'" [appHostbidding]="'pink'">
+    <p class="">  This is host binding practicing paragraph  </p>
+</div>
+<div [appAppClass]="{container: false, font: true}">
+    <p>
+        This is the ocer view of custom app class practicing paragraph  
+    </p>
+</div>
+<div *ngFor="let item of ObjectArr" class=" bg-info container p-4">
+  <div [appCondDir]="item.kg === highestKg.kg">
+    <h4>{{ item.food }}</h4>
+    <h4>{{ item.kg }}</h4>
+    <h4>{{ item.color }}</h4>
+  </div>
+</div>
+
+<div [appStyle]="{backgroundColor: 'blue', color:'yellow', border: '2px solid purple', width: '100%'}" class="text-center">
+    <p>
+        This is the overview of custom app style directive practicing paragraph  
+    </p>
+</div>

@@ -57,5 +57,17 @@ ngAfterViewInit(): void {
     console.log(this.message);
     
   }
+   ObjectArr = [
+    {food: 'rice', kg:10, color: 'white'},
+    {food: 'beans', kg:25, color: 'yellow'},
+    {food: 'yam', kg:20, color: 'green'}
+  ]
+
+  highestKg = this.sortedObject();
+  sortedObject(){
+    let allFood = [...this.ObjectArr];
+     return allFood.sort((a, b)=> b.kg - a.kg)[0];
+    
+  }
 
 }
