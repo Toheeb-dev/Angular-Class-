@@ -69,5 +69,12 @@ ngAfterViewInit(): void {
      return allFood.sort((a, b)=> b.kg - a.kg)[0];
     
   }
+active: boolean = false
 
+display: boolean = false
+
+occupation: string = 'designer'
+displayNotice(){
+  this.display = true;
+}
 }

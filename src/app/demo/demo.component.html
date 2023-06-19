@@ -23,8 +23,44 @@
   </div>
 </div>
 
-<div [appStyle]="{backgroundColor: 'blue', color:'yellow', border: '2px solid purple', width: '100%'}" class="text-center">
+<div [appStyle]="{backgroundColor: active ? 'blue' : 'red', color:'yellow', border: '2px solid purple', width: '100%'}" class="text-center">
     <p>
         This is the overview of custom app style directive practicing paragraph  
     </p>
+</div>
+
+<!-- STRUCTURAL DIRECTIVES -->
+<div>
+<div class="div-contain">
+    <button class="btn" (click)="displayNotice()"> Show notice
+    </button>
+</div>
+    
+<div class="card" *appIfDir="display">This is a example of custom structural directives</div>
+<ng-template #moreNotice class="card">This is a example of of more custom structural directives</ng-template>
+<p *appIfDir=" 10 > 5 ">
+    This is a testing paragraph
+</p>
+<!-- <div class="card" *ngIf="display else moreNotice ">This is a example of custom structural directives</div>
+<ng-template #moreNotice class="card">This is a example of of more custom structural directives</ng-template> -->
+</div>
+<!-- ==================================================== -->
+
+<!-- STRUCTURAL DIRECTIVES -->
+<!-- <div class="div-contain">
+    <button class="btn" (click)="displayNotice()"> Show notice
+    </button>
+</div>
+<ng-template [ngIf]="display" [ngIfElse]="fullNotice">
+<div class="card" >This is a example of custom structural directives</div>
+</ng-template>
+<ng-template #fullNotice class="card">This is a example of of more custom structural directives</ng-template> -->
+<!-- =================================================== -->
+<div [ngSwitch]="occupation">
+    <p *ngSwitchCase="'teacher'">This will display when the occupation is Tearcher</p>
+    <p *ngSwitchCase="'developer'">This will display when the occupation is Developer</p>
+    <p *ngSwitchCase="'designer'">This will display when the occupation is Designer</p>
+    <p *ngSwitchCase="'lawyer'">This will display when the occupation is Lawyer</p>
+    <p *ngSwitchCase="'farmer'">This will display when the occupation is Farmer</p>
+    <p *ngSwitchDefault>This is the default text that will display when the switch case does not match any expression/p>
 </div>

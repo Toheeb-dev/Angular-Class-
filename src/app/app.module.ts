@@ -32,6 +32,8 @@ import { HostbiddingDirective } from './customDirectives/hostbidding.directive';
 import { AppClassDirective } from './customDirectives/app-class.directive';
 import { CondDirDirective } from './customDirectives/cond-dir.directive';
 import { StyleDirective } from './customDirectives/style.directive';
+import { StructuralDirDirective } from './customDirectives/structural-dir.directive';
+import { IfDirDirective } from './customDirectives/if-dir.directive';
 
 
 @NgModule({
@@ -61,6 +63,8 @@ import { StyleDirective } from './customDirectives/style.directive';
     AppClassDirective,
     CondDirDirective,
     StyleDirective,
+    StructuralDirDirective,
+    IfDirDirective,
     
   ],
   imports: [
